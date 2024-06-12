@@ -1,4 +1,4 @@
-# sigma-rules
+# sbt-sigma-rules
 
 Welcome to the Security Blue Team Sigma Rules Public Repository!
 
