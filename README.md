@@ -1,7 +1,7 @@
 # sigma-rules
 
-Welcome to Security Blue Team Sigma Rules Public Repository! 
+Welcome to the Security Blue Team Sigma Rules Public Repository!
 
-Our goal is to create a community of detection engineers where each can share sigma rules to other engineers.
+Our mission is to build a collaborative community of detection engineers dedicated to sharing and improving Sigma rules. By contributing to this repository, you can help others enhance their threat detection capabilities and foster a more secure digital environment.
 
-This repository will also host rules that is referenced from our blogs, labs and etc. 
+In addition to community contributions, this repository will also host Sigma rules referenced in our blogs, labs, and other resources.
