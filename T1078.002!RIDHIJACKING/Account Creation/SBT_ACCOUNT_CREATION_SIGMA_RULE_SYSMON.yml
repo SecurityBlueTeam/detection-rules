@@ -1,0 +1,31 @@
+title: Detect User Account Creation using net and net1 via Sysmon
+id: 89012345-8901-2345-8901-234589012345
+description: Detects the creation of new user accounts using net and net1 via Sysmon process creation events.
+status: experimental
+author: SBT RENMARC
+date: 2024/06/11
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection1:
+        EventID: 1
+        CommandLine|contains: "net user"
+        CommandLine|contains: " /add"
+    selection2:
+        EventID: 1
+        CommandLine|contains: "net1 user"
+        CommandLine|contains: " /add"
+    condition: selection1 or selection2
+fields:
+    - EventID
+    - CommandLine
+    - ParentImage
+    - Image
+    - User
+falsepositives:
+    - Administrative scripts
+level: high
+tags:
+    - attack.persistence
+    - attack.t1078

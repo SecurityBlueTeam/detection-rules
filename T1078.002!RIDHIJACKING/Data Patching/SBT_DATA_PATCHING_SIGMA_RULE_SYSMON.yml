@@ -1,0 +1,28 @@
+title: Detect Data Patching in RID Hijacking
+id: 56789012-5678-9012-5678-901256789012
+description: Detects attempts to patch data in the registry for RID values indicating potential RID hijacking.
+status: experimental
+author: SBT RENMARC
+date: 2024/06/11
+logsource:
+    product: windows
+    service: sysmon
+detection:
+    selection:
+        EventID: 1
+        Image: "C:\\Windows\\System32\\reg.exe"
+        CommandLine|contains|all:
+            - "HKLM\\SAM\\SAM\\Domains\\Account\\Users\\*"
+            - " /v F"
+            - " /t REG_BINARY"
+    condition: selection
+fields:
+    - EventID
+    - Image
+    - CommandLine
+falsepositives:
+    - Administrative scripts
+level: high
+tags:
+    - attack.persistence
+    - attack.t1078.002

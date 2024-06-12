@@ -1,0 +1,25 @@
+title: Detect User Account Creation
+id: 67890123-6789-0123-6789-012367890123
+description: Detects the creation of new user accounts in Windows.
+status: experimental
+author: SBT Renmarc
+date: 2024/06/11
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4720
+    condition: selection
+fields:
+    - EventID
+    - TargetUserName
+    - SubjectUserName
+    - SubjectDomainName
+    - SubjectLogonId
+falsepositives:
+    - Legitimate administrative actions
+level: medium
+tags:
+    - attack.persistence
+    - attack.t1136.001

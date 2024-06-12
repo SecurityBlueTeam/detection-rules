@@ -1,0 +1,1 @@
+This technique involves attackers leveraging valid domain accounts to gain higher privileges within a domain, often by manipulating account identifiers like RIDs to escalate their privileges.

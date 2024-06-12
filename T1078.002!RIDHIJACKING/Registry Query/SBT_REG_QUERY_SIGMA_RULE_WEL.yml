@@ -1,0 +1,29 @@
+title: Detect Registry Query for RID Hijacking
+id: 34567890-3456-7890-3456-789034567890
+description: Detects attempts to query the registry for RID values indicating potential reconnaissance for RID hijacking.
+status: experimental
+author: SBT RENMARC
+date: 2024/06/11
+logsource:
+    product: windows
+    service: security
+detection:
+    selection:
+        EventID: 4656
+        ProcessName: "C:\\Windows\\System32\\reg.exe"
+        ObjectName: "\\REGISTRY\\MACHINE\\SAM\\SAM\\Domains\\Account\\Users\\*"
+        Accesses: 
+            - "Query key value"
+            - "Enumerate sub-keys"
+    condition: selection
+fields:
+    - EventID
+    - ProcessName
+    - ObjectName
+    - Accesses
+falsepositives:
+    - Administrative scripts
+level: medium
+tags:
+    - attack.persistence
+    - attack.t1078.002
