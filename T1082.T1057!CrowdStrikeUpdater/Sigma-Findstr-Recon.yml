@@ -1,7 +1,7 @@
 title: Potential Anti-Virus Recon Via Findstr.EXE
 id: 73849562-9012-3456-7890-456273849562
 status: experimental
-description: Detects command line usage of "findstr" to search for the "anti-virus" products keyword used by cybercriminals to leverage the latest CrowdStrike outage.
+description: Detects the command line usage of "findstr" to search for antivirus product keywords used by HatefWiper malware to exploit the recent CrowdStrike outage.
 references:
     - https://www.joesandbox.com/analysis/1477426/0/html
 author: SBT Renmarc
