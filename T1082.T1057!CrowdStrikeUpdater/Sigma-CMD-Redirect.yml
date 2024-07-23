@@ -22,7 +22,7 @@ detection:
         CommandLine|contains: '>'
     filter_optional_idm_extension:
         CommandLine|contains:
-            - '%LocalAppData'
+            - '%LocalAppData%'
             - 'Carroll.cmd'
             - 'Champion.pif'
     condition: all of selection_*
