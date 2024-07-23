@@ -1,0 +1,30 @@
+title: Potential Anti-Virus Recon Via Findstr.EXE
+id: 73849562-9012-3456-7890-456273849562
+status: experimental
+description: Detects command line usage of "findstr" to search for the "anti-virus" products keyword used by cybercriminals to leverage the latest CrowdStrike outage.
+references:
+    - https://www.joesandbox.com/analysis/1477426/0/html
+author: SBT Renmarc
+date: 2024/07/22
+tags:
+    - attack.discovery
+    - attack.T1082
+logsource:
+    category: process creation
+    product: windows
+detection:
+    selection_img:
+        - Image|endswith: '\findstr.exe'
+        - OriginalFileName: 'FINDSTR.EXE'
+    selection_cli:
+        CommandLine|contains:
+            - 'sophoshealth.exe' 
+            - 'avastui.exe' 
+            - 'avgui.exe' 
+            - 'Ukraine'
+            - 'wrsa.exe' 
+            - '/I' 
+    condition: all of selection_*
+falsepositives:
+    - Unknown
+level: medium

@@ -1,0 +1,31 @@
+title: CrowdStrike Updater CMD Shell Output Redirect
+id: 73849562-9012-3456-7890-456273849562
+status: experimental
+description: |
+    Detects the use of the redirection character ">" to redirect information on the command line.
+    This technique is sometimes used by malicious actors in order to redirect the output of reconnaissance commands.
+references:
+    - blog
+author: SBT Renmarc
+date: 2024/07/22
+tags:
+    - attack.discovery
+    - attack.t1082
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_cmd:
+        - OriginalFileName: 'Cmd.Exe'
+        - Image|endswith: '\cmd.exe'
+    selection_cli:
+        CommandLine|contains: '>'
+    filter_optional_idm_extension:
+        CommandLine|contains:
+            - '%LocalAppData'
+            - 'Carroll.cmd'
+            - 'Champion.pif'
+    condition: all of selection_*
+falsepositives:
+    - Administrative scripts
+level: low
