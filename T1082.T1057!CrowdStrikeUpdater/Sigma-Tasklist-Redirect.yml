@@ -1,7 +1,7 @@
 title: CrowdStrike Updater Tasklist Discovery Command
 id: 73849562-9012-3456-7890-456273849562
 status: experimental
-description: Adversaries may attempt to get information about running processes on a system. Information obtained could be used to gain an understanding of common software/applications running on systems within the network
+description: HatefWiper may attempt to get information about running processes on a system. Information obtained could be used to gain an understanding of common software/applications running on the system.
 references:
     - blog
 author: SBT Renmarc
