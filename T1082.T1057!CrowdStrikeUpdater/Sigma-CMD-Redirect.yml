@@ -2,8 +2,8 @@ title: CrowdStrike Updater CMD Shell Output Redirect
 id: 73849562-9012-3456-7890-456273849562
 status: experimental
 description: |
-    Detects the use of the redirection character ">" to redirect information on the command line.
-    This technique is sometimes used by malicious actors in order to redirect the output of reconnaissance commands.
+    Detects the use of the redirection character ">" to redirect information on the command line by HatefWiper.
+    This technique is also used by other threat actors in order to redirect the output of reconnaissance commands.
 references:
     - blog
 author: SBT Renmarc
