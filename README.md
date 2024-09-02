@@ -1,7 +1,7 @@
-# sbt-sigma-rules
+# sbt-detection-rules
 
-Welcome to the Security Blue Team Sigma Rules Public Repository!
+Welcome to the Security Blue Team Detection Rules Public Repository!
 
-Our mission is to build a collaborative community of detection engineers dedicated to sharing and improving Sigma rules. By contributing to this repository, you can help others enhance their threat detection capabilities and foster a more secure digital environment.
+Our mission is to create a collaborative community of detection engineers focused on sharing and refining rules that help the intelligence community defend against both known and unknown threats. By contributing to this repository, you can assist others in enhancing their threat detection capabilities and contribute to a more secure digital landscape.
 
-In addition to community contributions, this repository will also host Sigma rules referenced in our blogs, labs, and other resources.
+This repository hosts Sigma, Suricata, YARA rules, and more, referenced in our blogs, labs, and other resources.
